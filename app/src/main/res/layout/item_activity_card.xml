@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/activityIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/baseline_play_arrow_24"
+            android:tint="@color/purple_500"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/distanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14.32 км"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/purple_500"/>
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 часа 46 минут"
+                android:textSize="14sp"
+                android:textColor="@color/gray_text"/>
+
+            <TextView
+                android:id="@+id/typeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сёрфинг 🏄‍♂️"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 часов назад"
+                android:textSize="12sp"
+                android:textColor="@color/gray_text"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="@android:color/transparent"
+            android:contentDescription="Удалить"
+            android:layout_gravity="end|top"
+            android:tint="@color/purple_500"/>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView> 
