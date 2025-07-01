@@ -67,6 +67,27 @@ class MyTabFragment : Fragment() {
         }
     }
 
+    fun showNewActivityFragment() {
+        binding.newActivityContainer.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction()
+            .replace(R.id.newActivityContainer, NewActivityFragment())
+            .commit()
+    }
+
+    fun hideNewActivityFragment() {
+        binding.newActivityContainer.visibility = View.GONE
+        childFragmentManager.beginTransaction()
+            .remove(childFragmentManager.findFragmentById(R.id.newActivityContainer) ?: return)
+            .commit()
+    }
+
+    fun showActiveActivityFragment() {
+        binding.newActivityContainer.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction()
+            .replace(R.id.newActivityContainer, ActiveActivityFragment())
+            .commit()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

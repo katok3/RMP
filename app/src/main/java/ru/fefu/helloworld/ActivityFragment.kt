@@ -40,7 +40,7 @@ class ActivityFragment : Fragment() {
         binding.fab.setOnClickListener {
             val fragment = childFragmentManager.findFragmentByTag("f0")
             if (fragment is MyTabFragment) {
-                fragment.addFakeActivity()
+                fragment.showNewActivityFragment()
             }
         }
     }

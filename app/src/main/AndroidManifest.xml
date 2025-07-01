@@ -25,6 +25,7 @@
         <activity android:name=".LoginActivity" android:exported="true" />
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".ActivityDetailsActivity" android:exported="true" />
+        <activity android:name=".ChangePasswordActivity" />
     </application>
 
 </manifest>
