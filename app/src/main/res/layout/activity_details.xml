@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/background_light"
+        app:navigationIcon="@drawable/outline_arrow_back_24"
+        app:title="Activity details"
+        app:titleTextColor="@color/black"
+        app:menu="@menu/details_menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/activityIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_play_arrow_24"
+        android:tint="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/activityType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Велосипед 🚴‍♂️"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/activityIcon"
+        app:layout_constraintStart_toEndOf="@id/activityIcon"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14.32 км"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/activityIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14 часов назад"
+        android:textSize="14sp"
+        android:textColor="@color/gray_text"
+        app:layout_constraintTop_toBottomOf="@id/distanceText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 ч 42 мин"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/dateText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/startFinishLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Старт 14:49    Финиш 16:31"
+        android:textSize="14sp"
+        android:textColor="@color/gray_text"
+        app:layout_constraintTop_toBottomOf="@id/timeText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"/>
+
+    <EditText
+        android:id="@+id/commentEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Комментарий"
+        android:background="@drawable/abc_edit_text_material"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/startFinishLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout> 
