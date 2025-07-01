@@ -1,5 +1,6 @@
 package ru.fefu.helloworld
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,7 @@ class MyTabFragment : Fragment() {
     private var _binding: FragmentMyTabBinding? = null
     private val binding get() = _binding!!
 
-    private val activities = mutableListOf<ActivityItem>()
+    private val activities = mutableListOf<ActivityListItem>()
     private var adapter: ActivityAdapter? = null
 
     override fun onCreateView(
@@ -24,21 +25,34 @@ class MyTabFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ActivityAdapter(activities)
+        adapter = ActivityAdapter(activities) { activity ->
+            val intent = Intent(requireContext(), ActivityDetailsActivity::class.java)
+            intent.putExtra("distance", activity.distance)
+            intent.putExtra("time", activity.time)
+            intent.putExtra("type", activity.type)
+            intent.putExtra("date", activity.date)
+            intent.putExtra("startTime", activity.startTime)
+            intent.putExtra("finishTime", activity.finishTime)
+            startActivity(intent)
+        }
         binding.activityRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.activityRecyclerView.adapter = adapter
         updateUI()
     }
 
     fun addFakeActivity() {
-        activities.add(
-            ActivityItem(
-                distance = "5.00 км",
-                time = "30 минут",
-                type = "Бег 🏃",
-                date = "только что"
-            )
-        )
+        // Добавляем в секцию "Вчера"
+        if (activities.isEmpty() || activities[0] !is ActivityListItem.Section) {
+            activities.add(0, ActivityListItem.Section("Вчера"))
+        }
+        activities.add(1, ActivityListItem.Activity(
+            distance = "5.00 км",
+            time = "30 минут",
+            type = "Бег 🏃",
+            date = "только что",
+            startTime = "14:49",
+            finishTime = "16:31"
+        ))
         updateUI()
     }
 
