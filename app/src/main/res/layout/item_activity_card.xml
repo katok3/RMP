@@ -62,6 +62,16 @@
                 android:textSize="12sp"
                 android:textColor="@color/gray_text"/>
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="@android:color/transparent"
+            android:contentDescription="Удалить"
+            android:layout_gravity="end|top"
+            android:tint="@color/purple_500"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView> 

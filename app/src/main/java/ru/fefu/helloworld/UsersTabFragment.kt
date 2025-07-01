@@ -31,17 +31,22 @@ class UsersTabFragment : Fragment() {
             ActivityListItem.Section("Май 2022 года"),
             ActivityListItem.Activity("1000 м", "60 минут", "Велосипед 🚴‍♂️", "29.05.2022", user = "van_darkholme")
         )
-        val adapter = ActivityAdapter(activities) { activity ->
-            val intent = Intent(requireContext(), ActivityDetailsActivity::class.java)
-            intent.putExtra("distance", activity.distance)
-            intent.putExtra("time", activity.time)
-            intent.putExtra("type", activity.type)
-            intent.putExtra("date", activity.date)
-            intent.putExtra("user", activity.user)
-            intent.putExtra("startTime", activity.startTime)
-            intent.putExtra("finishTime", activity.finishTime)
-            startActivity(intent)
-        }
+        val adapter = ActivityAdapter(
+            activities,
+            onActivityClick = { activity ->
+                val intent = Intent(requireContext(), ActivityDetailsActivity::class.java)
+                intent.putExtra("distance", activity.distance)
+                intent.putExtra("time", activity.time)
+                intent.putExtra("type", activity.type)
+                intent.putExtra("date", activity.date)
+                intent.putExtra("user", activity.user)
+                intent.putExtra("startTime", activity.startTime)
+                intent.putExtra("finishTime", activity.finishTime)
+                startActivity(intent)
+            },
+            onDeleteClick = null,
+            onFooterAction = null
+        )
         binding.usersRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.usersRecyclerView.adapter = adapter
     }
