@@ -3,6 +3,8 @@
     <style name="Base.Theme.HelloWorld" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
     </style>
 
     <style name="Theme.HelloWorld" parent="Base.Theme.HelloWorld" />
